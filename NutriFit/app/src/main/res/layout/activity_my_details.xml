@@ -1,9 +1,200 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:fillViewport="true"
     tools:context=".MyDetailsActivity">
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/primary_background_color">
+
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/colorPrimary"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:title=""
+            app:titleTextColor="@android:color/white"
+            app:popupTheme="@style/ThemeOverlay.AppCompat.Light">
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_gravity="end"
+                android:gravity="center_vertical">
+
+                <!-- Profile Circle -->
+                <TextView
+                    android:id="@+id/profile_circle"
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:gravity="center"
+                    android:text="S"
+                    android:textColor="@android:color/white"
+                    android:background="@drawable/circle_background"
+                    android:textSize="18sp"
+                    android:layout_marginEnd="8dp"/>
+
+                <!-- Email Text -->
+                <TextView
+                    android:id="@+id/profile_email"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="shawn"
+                    android:textColor="@android:color/white"
+                    android:textSize="16sp"/>
+            </LinearLayout>
+
+        </androidx.appcompat.widget.Toolbar>
+
+
+        <TextView
+            android:id="@+id/text1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Personalisation"
+            android:textSize="30sp"
+            android:textColor="@color/black"
+            app:layout_constraintTop_toBottomOf="@id/toolbar"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            android:layout_marginTop="10dp" />
+
+        <TextView
+            android:id="@+id/demographic"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Demographic Profile"
+            android:textSize="20sp"
+            android:textColor="@color/black"
+            app:layout_constraintTop_toBottomOf="@id/text1"
+            app:layout_constraintStart_toStartOf="parent"
+            android:layout_marginTop="40dp" />
+
+        <ProgressBar
+            android:id="@+id/progress_demographic"
+            style="?android:attr/progressBarStyleHorizontal"
+            android:layout_width="0dp"
+            android:layout_height="10dp"
+            android:layout_marginTop="10dp"
+            android:progress="0"
+            android:progressTint="@color/colorPrimary"
+            app:layout_constraintTop_toBottomOf="@id/demographic"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent" />
+
+        <TextView
+            android:id="@+id/medical"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Medical History"
+            android:textSize="20sp"
+            android:textColor="@color/black"
+            app:layout_constraintTop_toBottomOf="@id/progress_demographic"
+            app:layout_constraintStart_toStartOf="parent"
+            android:layout_marginTop="30dp" />
+
+        <ProgressBar
+            android:id="@+id/progress_medical"
+            style="?android:attr/progressBarStyleHorizontal"
+            android:layout_width="0dp"
+            android:layout_height="10dp"
+            android:layout_marginTop="10dp"
+            android:progress="0"
+            android:progressTint="@color/colorPrimary"
+            app:layout_constraintTop_toBottomOf="@id/medical"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent" />
+
+        <TextView
+            android:id="@+id/eating"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Eating Disorder History"
+            android:textSize="20sp"
+            android:textColor="@color/black"
+            app:layout_constraintTop_toBottomOf="@id/progress_medical"
+            app:layout_constraintStart_toStartOf="parent"
+            android:layout_marginTop="30dp" />
+
+        <ProgressBar
+            android:id="@+id/progress_eating"
+            style="?android:attr/progressBarStyleHorizontal"
+            android:layout_width="0dp"
+            android:layout_height="10dp"
+            android:layout_marginTop="10dp"
+            android:progress="0"
+            android:progressTint="@color/colorPrimary"
+            app:layout_constraintTop_toBottomOf="@id/eating"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent" />
+
+        <TextView
+            android:id="@+id/nutrition"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Nutrition and Eating habits"
+            android:textSize="20sp"
+            android:textColor="@color/black"
+            app:layout_constraintTop_toBottomOf="@id/progress_eating"
+            app:layout_constraintStart_toStartOf="parent"
+            android:layout_marginTop="30dp" />
+
+        <ProgressBar
+            android:id="@+id/progress_nutrition"
+            style="?android:attr/progressBarStyleHorizontal"
+            android:layout_width="0dp"
+            android:layout_height="10dp"
+            android:layout_marginTop="10dp"
+            android:progress="0"
+            android:progressTint="@color/colorPrimary"
+            app:layout_constraintTop_toBottomOf="@id/nutrition"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent" />
+
+        <TextView
+            android:id="@+id/physical"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Physical Activity and Fitness"
+            android:textSize="20sp"
+            android:textColor="@color/black"
+            app:layout_constraintTop_toBottomOf="@id/progress_nutrition"
+            app:layout_constraintStart_toStartOf="parent"
+            android:layout_marginTop="30dp" />
+
+        <ProgressBar
+            android:id="@+id/progress_physical"
+            style="?android:attr/progressBarStyleHorizontal"
+            android:layout_width="0dp"
+            android:layout_height="10dp"
+            android:layout_marginTop="10dp"
+            android:progress="0"
+            android:progressTint="@color/colorPrimary"
+            app:layout_constraintTop_toBottomOf="@id/physical"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent" />
+
+        <Button
+            android:id="@+id/submit_btn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Submit"
+            app:layout_constraintTop_toBottomOf="@id/progress_physical"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:textColor="@android:color/white"
+            android:backgroundTint="@color/colorPrimary"
+            android:layout_marginTop="50dp"/>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</androidx.core.widget.NestedScrollView>

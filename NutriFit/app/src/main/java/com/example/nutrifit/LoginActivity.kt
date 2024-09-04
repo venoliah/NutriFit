@@ -23,12 +23,13 @@ class LoginActivity : AppCompatActivity() {
         // Check if user is signed in (non-null) and update UI accordingly
         val currentUser = auth.currentUser
         if (currentUser != null) {
-            // Navigate to MainActivity
-            val intent = Intent(this, MainActivity::class.java)
+            // Navigate to UserViewActivity
+            val intent = Intent(this, UserViewActivity::class.java)
             startActivity(intent)
             finish()
         }
     }
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_login)
@@ -69,8 +70,8 @@ class LoginActivity : AppCompatActivity() {
                     if (task.isSuccessful) {
                         // Sign in success
                         Log.d(TAG, "signInWithEmail:success")
-                        // Navigate to MainActivity
-                        val intent = Intent(this, MainActivity::class.java)
+                        // Navigate to UserViewActivity
+                        val intent = Intent(this, UserViewActivity::class.java)
                         startActivity(intent)
                         finish() // Optional: finish the LoginActivity so the user can't go back to it
                     } else {

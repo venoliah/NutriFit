@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ProfileFragment">
+
+    <!-- Toolbar at the top -->
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="56dp"
+    android:background="@color/colorPrimary"
+    android:layout_gravity="top"
+    app:title=""
+    app:titleTextColor="@android:color/white"
+    app:popupTheme="@style/ThemeOverlay.AppCompat.Light">
+
+    <!-- Content inside the Toolbar -->
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_alignParentEnd="true"
+        android:gravity="center_vertical">
+
+        <!-- Profile Circle -->
+        <TextView
+            android:id="@+id/profile_circle"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:gravity="center"
+            android:text="S"
+            android:textColor="@android:color/white"
+            android:background="@drawable/circle_background"
+            android:textSize="18sp"
+            android:layout_alignParentEnd="true"
+            android:layout_marginEnd="8dp"
+            android:layout_centerVertical="true"/>
+
+        <!-- Email Text -->
+        <TextView
+            android:id="@+id/profile_email"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="shawn"
+            android:textColor="@android:color/white"
+            android:textSize="16sp"
+            android:layout_toStartOf="@id/profile_circle"
+            android:layout_centerVertical="true"
+            android:layout_marginEnd="8dp"/>
+    </RelativeLayout>
+</androidx.appcompat.widget.Toolbar>
+
+    <!-- Placeholder for other content below the toolbar -->
+<TextView
+android:layout_width="match_parent"
+android:layout_height="wrap_content"
+android:layout_gravity="center"
+android:text="home" />
+
+    </FrameLayout>
