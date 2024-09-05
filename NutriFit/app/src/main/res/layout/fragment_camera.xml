@@ -1,10 +1,17 @@
-<?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    tools:context=".ProfileFragment">
+    android:background="@android:color/transparent"
+    tools:context=".CameraFragment">
+
+    <!-- Camera preview -->
+    <androidx.camera.view.PreviewView
+        android:id="@+id/viewFinder"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_gravity="center" />
 
     <!-- Toolbar at the top -->
     <androidx.appcompat.widget.Toolbar
@@ -15,23 +22,39 @@
         android:layout_gravity="top"
         app:title="Lens"
         app:titleTextColor="@android:color/white"
-        app:popupTheme="@style/ThemeOverlay.AppCompat.Light">
+        app:popupTheme="@style/ThemeOverlay.AppCompat.Light" />
 
-        <LinearLayout
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:layout_gravity="end">
-            <!-- Add any additional views or icons here -->
-        </LinearLayout>
-
-    </androidx.appcompat.widget.Toolbar>
-
-    <!-- Placeholder for other content below the toolbar -->
-    <TextView
-        android:layout_width="match_parent"
+    <!-- Button to take a photo (ImageButton with increased size) -->
+    <RelativeLayout
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_gravity="center"
-        android:text="home" />
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="32dp">
 
-</FrameLayout>
+        <!-- Icon to the left of the circle icon -->
+        <ImageButton
+            android:id="@+id/btnPhotoLibrary"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:layout_alignParentStart="true"
+            android:layout_marginStart="40dp"
+        android:background="@android:color/transparent"
+        android:src="@drawable/baseline_photo_library_24"
+        android:contentDescription="@string/photo_library" />
+
+        <!-- Circle button to take a photo -->
+        <ImageButton
+            android:id="@+id/btnTakePhoto"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:layout_toEndOf="@id/btnPhotoLibrary"
+            android:layout_marginStart="16dp"
+            android:background="@android:color/transparent"
+            android:src="@drawable/baseline_circle_24"
+            android:scaleType="centerInside"
+            android:contentDescription="@string/take_photo" />
+
+    </RelativeLayout>
+
+</RelativeLayout>

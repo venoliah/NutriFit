@@ -49,5 +49,7 @@
         vestibulum. Fusce dictum libero quis erat maximus, vitae volutpat diam dignissim.
     </string>
     <!-- TODO: Remove or change this placeholder text -->
-    <string name="hello_blank_fragment">Hello blank fragment</string> <!-- Add this line -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="take_photo" />
+    <string name="photo_library" /> <!-- Add this line -->
 </resources>
