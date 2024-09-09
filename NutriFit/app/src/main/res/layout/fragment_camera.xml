@@ -13,7 +13,6 @@
         android:layout_height="match_parent"
         android:layout_gravity="center" />
 
-    <!-- Toolbar at the top -->
     <androidx.appcompat.widget.Toolbar
         android:id="@+id/toolbar"
         android:layout_width="match_parent"
@@ -24,7 +23,6 @@
         app:titleTextColor="@android:color/white"
         app:popupTheme="@style/ThemeOverlay.AppCompat.Light" />
 
-    <!-- Button to take a photo (ImageButton with increased size) -->
     <RelativeLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -32,7 +30,6 @@
         android:layout_centerHorizontal="true"
         android:layout_marginBottom="32dp">
 
-        <!-- Icon to the left of the circle icon -->
         <ImageButton
             android:id="@+id/btnPhotoLibrary"
             android:layout_width="48dp"
@@ -43,7 +40,6 @@
         android:src="@drawable/baseline_photo_library_24"
         android:contentDescription="@string/photo_library" />
 
-        <!-- Circle button to take a photo -->
         <ImageButton
             android:id="@+id/btnTakePhoto"
             android:layout_width="48dp"
