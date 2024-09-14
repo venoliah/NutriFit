@@ -46,13 +46,17 @@ dependencies {
     implementation("com.google.android.material:material:1.12.0")
     implementation("androidx.constraintlayout:constraintlayout:2.1.4")
 
-    //Additional dependancies
+    // Additional dependencies
     implementation("androidx.viewpager2:viewpager2:1.1.0")
-    implementation("com.google.firebase:firebase-auth:23.0.0")
     implementation("androidx.navigation:navigation-fragment-ktx:2.7.5")
     implementation("androidx.navigation:navigation-ui-ktx:2.7.5") // carousel implementation
 
-    //implementation("com.firebaseui:firebase-ui-auth:4.3.2")
+    // Firebase BoM
+    implementation(platform("com.google.firebase:firebase-bom:33.2.0"))
+
+    // Firebase libraries (no version needed because of BoM)
+    implementation("com.google.firebase:firebase-auth")
+    implementation("com.google.firebase:firebase-firestore")
 
     testImplementation("junit:junit:4.13.2")
     androidTestImplementation("androidx.test.ext:junit:1.2.1")
@@ -62,5 +66,6 @@ dependencies {
     implementation("androidx.camera:camera-camera2:1.4.0-rc01")
     implementation("androidx.camera:camera-lifecycle:1.4.0-rc01")
     implementation("androidx.camera:camera-view:1.4.0-rc01")
+    implementation("com.google.guava:guava:31.1-android")
 
 }

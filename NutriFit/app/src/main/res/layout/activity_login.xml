@@ -1,111 +1,118 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout
+<ScrollView
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
-    android:gravity="center"
+    android:fillViewport="true"
+    android:padding="16dp"
     tools:context=".LoginActivity">
 
-    <!-- ImageView for the logo -->
-    <ImageView
-        android:id="@+id/logo_image"
-        android:layout_width="300dp"
-        android:layout_height="300dp"
-        android:src="@drawable/logo_no_background"
-        android:scaleType="fitCenter"
-        android:layout_marginTop="16dp"
-        android:layout_marginBottom="16dp"
-        android:contentDescription="@string/image_description" />
-
-    <!-- TextView for the title -->
-    <TextView
-        android:id="@+id/text1"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Login"
-        android:textSize="30sp"
-        android:textColor="@color/black"
-        android:layout_marginTop="0dp"
-        android:gravity="center" />
-
-    <!-- Email TextInputLayout -->
-    <com.google.android.material.textfield.TextInputLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="16dp">
-
-        <com.google.android.material.textfield.TextInputEditText
-            android:id="@+id/email"
-            android:hint="@string/email"
-            android:layout_width="match_parent"
-            android:layout_height="48dp"
-            android:paddingVertical="8dp"
-            android:minHeight="48dp"/> <!-- Minimum touch target height is 48dp -->
-    </com.google.android.material.textfield.TextInputLayout>
-
-    <!-- Password TextInputLayout -->
-    <com.google.android.material.textfield.TextInputLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
-        app:endIconMode="password_toggle">  <!-- Enables the eye icon -->
-
-        <com.google.android.material.textfield.TextInputEditText
-            android:id="@+id/password"
-            android:hint="@string/password"
-            android:layout_width="match_parent"
-            android:layout_height="48dp"
-            android:paddingVertical="8dp"
-            android:minHeight="48dp"
-            android:inputType="textPassword" />  <!-- Ensures the text is masked by default -->
-
-    </com.google.android.material.textfield.TextInputLayout>
-
-    <!-- Login Button -->
-    <Button
-        android:id="@+id/btn_login"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Sign in"
-        android:textColor="@android:color/white"
-        android:backgroundTint="@color/colorPrimary"
-        android:layout_marginTop="30dp"
-        android:paddingVertical="12dp"
-        android:minHeight="48dp"
-        android:gravity="center"/>
-
-    <!-- TextView for registration link -->
     <LinearLayout
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        android:gravity="center"
-        android:layout_marginTop="16dp"
-        android:layout_marginBottom="16dp">
+        android:orientation="vertical"
+        android:gravity="center">
 
+        <!-- ImageView for the logo -->
+        <ImageView
+            android:id="@+id/logo_image"
+            android:layout_width="300dp"
+            android:layout_height="300dp"
+            android:src="@drawable/logo_no_background"
+            android:scaleType="fitCenter"
+            android:layout_marginTop="16dp"
+            android:layout_marginBottom="16dp"
+            android:contentDescription="@string/image_description" />
+
+        <!-- TextView for the title -->
         <TextView
-            android:id="@+id/not_registered_text"
+            android:id="@+id/text1"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Not yet registered?"
+            android:text="Login"
+            android:textSize="30sp"
             android:textColor="@color/black"
-            android:textSize="16sp"
-            android:paddingVertical="8dp"
-            android:minHeight="48dp"/> <!-- Ensure touch target size -->
+            android:layout_marginTop="0dp"
+            android:gravity="center" />
 
-        <TextView
-            android:id="@+id/register_link"
+        <!-- Email TextInputLayout -->
+        <com.google.android.material.textfield.TextInputLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/email"
+                android:hint="@string/email"
+                android:layout_width="match_parent"
+                android:layout_height="48dp"
+                android:paddingVertical="8dp"
+                android:minHeight="48dp"/> <!-- Minimum touch target height is 48dp -->
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <!-- Password TextInputLayout -->
+        <com.google.android.material.textfield.TextInputLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            app:endIconMode="password_toggle">  <!-- Enables the eye icon -->
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/password"
+                android:hint="@string/password"
+                android:layout_width="match_parent"
+                android:layout_height="48dp"
+                android:paddingVertical="8dp"
+                android:minHeight="48dp"
+                android:inputType="textPassword" />  <!-- Ensures the text is masked by default -->
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <!-- Login Button -->
+        <Button
+            android:id="@+id/btn_login"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text=" Register here"
-            android:textColor="@color/colorPrimary"
-            android:textSize="16sp"
-            android:paddingVertical="8dp"
+            android:text="Sign in"
+            android:textColor="@android:color/white"
+            android:backgroundTint="@color/colorPrimary"
+            android:layout_marginTop="30dp"
+            android:paddingVertical="12dp"
             android:minHeight="48dp"
-            android:onClick="onRegisterClick"/> <!-- Ensure touch target size -->
-    </LinearLayout>
+            android:gravity="center"/>
 
-</LinearLayout>
+        <!-- TextView for registration link -->
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center"
+            android:layout_marginTop="16dp"
+            android:layout_marginBottom="16dp">
+
+            <TextView
+                android:id="@+id/not_registered_text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Not yet registered?"
+                android:textColor="@color/black"
+                android:textSize="16sp"
+                android:paddingVertical="8dp"
+                android:minHeight="48dp"/> <!-- Ensure touch target size -->
+
+            <TextView
+                android:id="@+id/register_link"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text=" Register here"
+                android:textColor="@color/colorPrimary"
+                android:textSize="16sp"
+                android:paddingVertical="8dp"
+                android:minHeight="48dp"
+                android:onClick="onRegisterClick"/> <!-- Ensure touch target size -->
+        </LinearLayout>
+
+    </LinearLayout>
+</ScrollView>

@@ -14,7 +14,7 @@
         app:titleTextColor="@android:color/white"
         app:popupTheme="@style/ThemeOverlay.AppCompat.Light" />
 
-    <!-- TabLayout to switch between NutriChat and NutriBot -->
+    <!-- TabLayout -->
     <com.google.android.material.tabs.TabLayout
         android:id="@+id/tab_layout"
         android:layout_width="match_parent"
@@ -23,7 +23,7 @@
         app:tabSelectedTextColor="@android:color/white"
         app:tabTextColor="@android:color/darker_gray" />
 
-    <!-- ViewPager2 for fragment switching -->
+    <!-- ViewPager2 for fragment switching between nutribot and nutrichat -->
     <androidx.viewpager2.widget.ViewPager2
         android:id="@+id/view_pager"
         android:layout_width="match_parent"

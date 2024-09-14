@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:padding="8dp">
+
+    <!-- Profile Circle -->
+    <TextView
+        android:id="@+id/profile_circle"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:gravity="center"
+        android:text="A"
+        android:textColor="@android:color/white"
+        android:background="@drawable/circle_background"
+        android:textSize="18sp"
+        android:layout_alignParentStart="true"/>
+
+    <!-- Email Text -->
+    <TextView
+        android:id="@+id/profile_email"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="User"
+        android:textColor="@android:color/black"
+        android:textSize="16sp"
+        android:layout_toEndOf="@id/profile_circle"
+        android:layout_alignTop="@id/profile_circle"
+        android:layout_marginStart="8dp"/>
+
+    <!-- Message Text -->
+    <TextView
+        android:id="@+id/message_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Hello, this is a message"
+        android:textSize="16sp"
+        android:layout_toEndOf="@id/profile_email"
+        android:layout_below="@id/profile_circle"
+        android:layout_marginTop="4dp"
+        android:layout_marginStart="8dp"
+        android:background="@drawable/message_background"
+        android:padding="8dp"/>
+
+</RelativeLayout>
