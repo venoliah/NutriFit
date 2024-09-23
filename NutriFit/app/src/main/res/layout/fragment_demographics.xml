@@ -1,14 +1,286 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
+<androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".DemographicsFragment">
+    android:fillViewport="true"
+    android:padding="16dp">
 
-    <!-- TODO: Update blank fragment layout -->
-    <TextView
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="Demographics" />
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
 
-</FrameLayout>
+        <!-- Title: Demographic Profile -->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Demographic Profile"
+            android:textSize="24sp"
+            android:textStyle="bold"
+            android:textColor="@color/colorPrimary"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginBottom="16dp" />
+
+        <!-- Age Section in CardView -->
+        <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="16dp"
+            app:cardCornerRadius="8dp"
+            app:cardElevation="2dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="16dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="What is your age?"
+                    android:textSize="20sp"
+                    android:layout_marginTop="8dp"/>
+
+                <Spinner
+                    android:id="@+id/age_spinner"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:spinnerMode="dropdown" />
+            </LinearLayout>
+        </androidx.cardview.widget.CardView>
+
+        <!-- Gender Section in CardView -->
+        <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="16dp"
+            app:cardCornerRadius="8dp"
+            app:cardElevation="2dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="16dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="What is your gender?"
+                    android:textSize="20sp"
+                    android:layout_marginTop="8dp" />
+
+                <RadioGroup
+                    android:id="@+id/gender_group"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <RadioButton
+                        android:id="@+id/male_radio"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Male" />
+
+                    <RadioButton
+                        android:id="@+id/female_radio"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Female" />
+                </RadioGroup>
+            </LinearLayout>
+        </androidx.cardview.widget.CardView>
+
+        <!-- Height Section in CardView -->
+        <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="16dp"
+            app:cardCornerRadius="8dp"
+            app:cardElevation="2dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="16dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="What is your height?"
+                    android:textSize="20sp"
+                    android:layout_marginTop="8dp" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:layout_marginTop="8dp">
+
+                    <EditText
+                        android:id="@+id/height_input"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:hint="Height (cm)"
+                        android:inputType="number" />
+                </LinearLayout>
+            </LinearLayout>
+        </androidx.cardview.widget.CardView>
+
+        <!-- Weight Section in CardView -->
+        <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="16dp"
+            app:cardCornerRadius="8dp"
+            app:cardElevation="2dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="16dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="What is your weight?"
+                    android:textSize="20sp"
+                    android:layout_marginTop="8dp" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:layout_marginTop="8dp">
+
+                    <EditText
+                        android:id="@+id/weight_input"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:hint="Weight (kg)"
+                        android:inputType="number" />
+                </LinearLayout>
+            </LinearLayout>
+        </androidx.cardview.widget.CardView>
+
+        <!-- Living Situation Section in CardView -->
+        <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="16dp"
+            app:cardCornerRadius="8dp"
+            app:cardElevation="2dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="16dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="What is your current living situation?"
+                    android:textSize="20sp"
+                    android:layout_marginTop="8dp" />
+
+                <!-- Living situation options -->
+                <RadioGroup
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:layout_marginTop="8dp">
+
+                    <RadioButton
+                        android:id="@+id/living_family"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="With family" />
+
+                    <RadioButton
+                        android:id="@+id/living_alone"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Alone" />
+                </RadioGroup>
+
+                <RadioGroup
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:layout_marginTop="8dp">
+
+                    <RadioButton
+                        android:id="@+id/living_roommate"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="With roommates" />
+
+                    <RadioButton
+                        android:id="@+id/living_partner"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="With partner" />
+                </RadioGroup>
+            </LinearLayout>
+        </androidx.cardview.widget.CardView>
+
+        <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="16dp"
+            app:cardCornerRadius="8dp"
+            app:cardElevation="2dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="16dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="How active are you?"
+                    android:textSize="20sp"
+                    android:layout_marginTop="25dp" />
+
+                <RadioGroup
+                    android:id="@+id/activity_level_group"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <RadioButton
+                        android:id="@+id/seated_radio"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Mostly seated" />
+
+                    <RadioButton
+                        android:id="@+id/fairly_active_radio"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Fairly active" />
+
+                    <RadioButton
+                        android:id="@+id/very_active_radio"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Very active" />
+                </RadioGroup>
+            </LinearLayout>
+        </androidx.cardview.widget.CardView>
+
+
+    </LinearLayout>
+
+</androidx.core.widget.NestedScrollView>
+

@@ -68,4 +68,5 @@ dependencies {
     implementation("androidx.camera:camera-view:1.4.0-rc01")
     implementation("com.google.guava:guava:31.1-android")
 
+    implementation ("androidx.cardview:cardview:1.0.0")
 }

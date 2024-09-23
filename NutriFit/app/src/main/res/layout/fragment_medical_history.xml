@@ -1,14 +1,259 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
+<androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MedicalHistoryFragment">
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:padding="16dp">
 
-    <!-- TODO: Update blank fragment layout -->
-    <TextView
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="medical" />
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
 
-</FrameLayout>
+        <!-- Title -->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Medical History"
+            android:textSize="24sp"
+            android:layout_gravity="center_horizontal"
+            android:textColor="@color/colorPrimary"
+            android:layout_marginBottom="16dp" />
+
+        <!-- Diagnosed Medical Conditions -->
+        <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="16dp"
+            app:cardElevation="6dp"
+            app:cardCornerRadius="8dp"
+            android:padding="16dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Do you have any diagnosed medical conditions?"
+                    android:textSize="20sp" />
+
+                <Spinner
+                    android:id="@+id/conditions_spinner"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:layout_marginBottom="16dp"
+                    android:spinnerMode="dropdown" />
+            </LinearLayout>
+        </androidx.cardview.widget.CardView>
+
+        <!-- Active Diagnosis of Eating Disorder -->
+        <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="16dp"
+            app:cardElevation="6dp"
+            app:cardCornerRadius="8dp"
+            android:padding="16dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Do you have an active diagnosis of an eating disorder? (e.g. bulimia, anorexia, or similar diagnosis)"
+                    android:textSize="20sp" />
+
+                <RadioGroup
+                    android:id="@+id/eating_disorder_group"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <RadioButton
+                        android:id="@+id/eating_disorder_yes"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Yes" />
+
+                    <RadioButton
+                        android:id="@+id/eating_disorder_no"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="No" />
+                </RadioGroup>
+            </LinearLayout>
+        </androidx.cardview.widget.CardView>
+
+        <!-- Taking Medications -->
+        <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="16dp"
+            app:cardElevation="6dp"
+            app:cardCornerRadius="8dp"
+            android:padding="16dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Are you currently taking any medications?"
+                    android:textSize="20sp" />
+
+                <RadioGroup
+                    android:id="@+id/medications_group"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <RadioButton
+                        android:id="@+id/medications_yes"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Yes" />
+
+                    <RadioButton
+                        android:id="@+id/medications_no"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="No" />
+                </RadioGroup>
+            </LinearLayout>
+        </androidx.cardview.widget.CardView>
+
+        <!-- Psychiatric Disorders -->
+        <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="16dp"
+            app:cardElevation="6dp"
+            app:cardCornerRadius="8dp"
+            android:padding="16dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Have you been diagnosed with any psychiatric disorders?"
+                    android:textSize="20sp" />
+
+                <RadioGroup
+                    android:id="@+id/psychiatric_disorders_group"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <RadioButton
+                        android:id="@+id/psychiatric_yes"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Yes" />
+
+                    <RadioButton
+                        android:id="@+id/psychiatric_no"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="No" />
+                </RadioGroup>
+            </LinearLayout>
+        </androidx.cardview.widget.CardView>
+
+        <!-- Recent Surgeries -->
+        <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="16dp"
+            app:cardElevation="6dp"
+            app:cardCornerRadius="8dp"
+            android:padding="16dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Have you had any recent surgeries or hospitalizations?"
+                    android:textSize="20sp" />
+
+                <RadioGroup
+                    android:id="@+id/surgeries_group"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <RadioButton
+                        android:id="@+id/surgeries_yes"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Yes" />
+
+                    <RadioButton
+                        android:id="@+id/surgeries_no"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="No" />
+                </RadioGroup>
+            </LinearLayout>
+        </androidx.cardview.widget.CardView>
+
+        <!-- Allergies -->
+        <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="16dp"
+            app:cardElevation="6dp"
+            app:cardCornerRadius="8dp"
+            android:padding="16dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Do you have any allergies?"
+                    android:textSize="20sp" />
+
+                <RadioGroup
+                    android:id="@+id/allergies_group"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <RadioButton
+                        android:id="@+id/allergies_yes"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Yes" />
+
+                    <RadioButton
+                        android:id="@+id/allergies_no"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="No" />
+                </RadioGroup>
+            </LinearLayout>
+        </androidx.cardview.widget.CardView>
+
+    </LinearLayout>
+</androidx.core.widget.NestedScrollView>

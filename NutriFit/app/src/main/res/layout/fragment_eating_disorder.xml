@@ -1,14 +1,254 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
+<androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:androidx="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".EatingDisorderFragment">
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:padding="16dp">
 
-    <!-- TODO: Update blank fragment layout -->
-    <TextView
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="eating" />
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:divider="?android:attr/dividerVertical"
+        android:showDividers="middle"
+        android:dividerPadding="10dp">
 
-</FrameLayout>
+        <!-- Title -->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Mental Health"
+            android:textSize="24sp"
+            android:layout_gravity="center_horizontal"
+            android:textColor="@color/colorPrimary"
+            android:layout_marginBottom="16dp" />
+
+        <!-- Current Emotional State Question -->
+        <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="16dp"
+            app:cardElevation="6dp"
+            android:padding="16dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="How would you describe your current emotional state?"
+                    android:textSize="20sp" />
+
+                <RadioGroup
+                    android:id="@+id/emotional_state_group"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:layout_marginTop="10dp">
+
+                    <GridLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:columnCount="2">
+
+                        <RadioButton
+                            android:id="@+id/emotion_happy"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Happy" />
+
+                        <RadioButton
+                            android:id="@+id/emotion_sad"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Sad" />
+
+                        <RadioButton
+                            android:id="@+id/emotion_anxious"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Anxious" />
+
+                        <RadioButton
+                            android:id="@+id/emotion_neutral"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Neutral" />
+                    </GridLayout>
+                </RadioGroup>
+            </LinearLayout>
+        </androidx.cardview.widget.CardView>
+
+        <!-- Experience Anxiety, Depression, or Stress Question -->
+        <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="16dp"
+            androidx:cardCornerRadius="8dp"
+            android:padding="16dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Do you experience feelings of anxiety, depression, or stress regularly?"
+                    android:textSize="20sp" />
+
+                <RadioGroup
+                    android:id="@+id/anxiety_group"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:layout_marginTop="10dp">
+                    <RadioButton
+                        android:id="@+id/anxiety_yes"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Yes" />
+
+                    <RadioButton
+                        android:id="@+id/anxiety_no"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="No" />
+                </RadioGroup>
+            </LinearLayout>
+        </androidx.cardview.widget.CardView>
+
+        <!-- Coping with Negative Emotions -->
+        <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="16dp"
+            androidx:cardCornerRadius="8dp"
+            android:padding="16dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="How do you cope with negative emotions or stress?"
+                    android:textSize="20sp" />
+
+                <Spinner
+                    android:id="@+id/coping_mechanisms_spinner"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginBottom="16dp"
+                    android:spinnerMode="dropdown" />
+            </LinearLayout>
+        </androidx.cardview.widget.CardView>
+
+        <!-- Support System -->
+        <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="16dp"
+            androidx:cardCornerRadius="8dp"
+            android:padding="16dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Do you have a support system? (e.g., family, friends, therapist)"
+                    android:textSize="20sp" />
+
+                <RadioGroup
+                    android:id="@+id/support_system_group"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:layout_marginTop="10dp">
+                    <RadioButton
+                        android:id="@+id/support_yes"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Yes" />
+
+                    <RadioButton
+                        android:id="@+id/support_no"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="No" />
+                </RadioGroup>
+            </LinearLayout>
+        </androidx.cardview.widget.CardView>
+
+        <!-- Feeling Overwhelmed by Eating Disorder -->
+        <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="16dp"
+            androidx:cardCornerRadius="8dp"
+            android:padding="16dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="How often do you feel overwhelmed by your eating disorder?"
+                    android:textSize="20sp" />
+
+                <RadioGroup
+                    android:id="@+id/overwhelmed_group"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:layout_marginTop="10dp">
+                    <GridLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:columnCount="2">
+
+                        <RadioButton
+                            android:id="@+id/overwhelmed_frequently"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Frequently" />
+
+                        <RadioButton
+                            android:id="@+id/overwhelmed_never"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Never" />
+
+                        <RadioButton
+                            android:id="@+id/overwhelmed_sometimes"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Sometimes" />
+
+                        <RadioButton
+                            android:id="@+id/overwhelmed_rarely"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Rarely" />
+                    </GridLayout>
+                </RadioGroup>
+            </LinearLayout>
+        </androidx.cardview.widget.CardView>
+
+    </LinearLayout>
+</androidx.core.widget.NestedScrollView>
